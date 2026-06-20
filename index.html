@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>霓虹贪吃蛇</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <h1 class="game-title">贪吃蛇</h1>
+    
+    <div class="info-panel">
+      <div class="info-item">
+        <span class="info-label">分数</span>
+        <span class="info-value" id="score">0</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">时间</span>
+        <span class="info-value" id="timer">00:00</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">最高分</span>
+        <span class="info-value" id="highScore">0</span>
+      </div>
+    </div>
+
+    <div class="canvas-wrapper">
+      <canvas id="gameCanvas" width="400" height="400"></canvas>
+      <div class="overlay" id="startOverlay">
+        <div class="overlay-content">
+          <p class="overlay-text">按 空格键 开始</p>
+          <p class="overlay-hint">使用 ↑ ↓ ← → 控制方向</p>
+        </div>
+      </div>
+      <div class="overlay hidden" id="gameOverOverlay">
+        <div class="overlay-content">
+          <p class="overlay-title">游戏结束</p>
+          <p class="overlay-text">得分：<span id="finalScore">0</span></p>
+          <p class="overlay-text">存活：<span id="finalTime">00:00</span></p>
+          <p class="overlay-hint" id="newRecordHint">🎉 新纪录！</p>
+          <p class="overlay-hint">按 空格键 重新开始</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button class="btn" id="startBtn">开始游戏</button>
+      <button class="btn" id="restartBtn" disabled>重新开始</button>
+    </div>
+
+    <div class="speed-indicator">
+      <span class="speed-label">速度等级：</span>
+      <span class="speed-level" id="speedLevel">1</span>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
